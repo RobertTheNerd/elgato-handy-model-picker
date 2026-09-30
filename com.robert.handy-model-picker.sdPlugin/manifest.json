@@ -5,6 +5,7 @@
   "Version": "0.1.0.0",
   "Author": "RobertTheNerd",
   "Description": "One key per Handy speech-to-text model: press to make it Handy's active model.",
+  "URL": "https://github.com/RobertTheNerd/elgato-handy-model-picker",
   "Icon": "imgs/plugin",
   "CategoryIcon": "imgs/category",
   "Category": "Handy Model Picker",

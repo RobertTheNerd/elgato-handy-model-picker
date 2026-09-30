@@ -10,6 +10,12 @@
     "speech-to-text",
     "macos"
   ],
+  "homepage": "https://github.com/RobertTheNerd/elgato-handy-model-picker#readme",
+  "bugs": "https://github.com/RobertTheNerd/elgato-handy-model-picker/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertTheNerd/elgato-handy-model-picker.git"
+  },
   "license": "MIT",
   "author": "Robert Wayne (https://github.com/RobertTheNerd)",
   "private": true,
