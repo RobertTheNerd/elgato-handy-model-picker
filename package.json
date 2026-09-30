@@ -1,0 +1,47 @@
+{
+  "name": "elgato-handy-model-picker",
+  "version": "0.1.0",
+  "description": "Stream Deck plugin for macOS: one key per Handy speech-to-text model. Press to make it Handy's active model.",
+  "keywords": [
+    "stream-deck",
+    "elgato",
+    "streamdeck-plugin",
+    "handy",
+    "speech-to-text",
+    "macos"
+  ],
+  "license": "MIT",
+  "author": "Robert Wayne (https://github.com/RobertTheNerd)",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "os": [
+    "darwin"
+  ],
+  "scripts": {
+    "build": "esbuild src/plugin.ts --bundle --platform=node --target=node24 --format=esm --sourcemap --outfile=com.robert.handy-model-picker.sdPlugin/bin/plugin.js --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\"",
+    "watch": "npm run build -- --watch",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "images": "node scripts/render-images.ts",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run validate",
+    "link": "streamdeck link com.robert.handy-model-picker.sdPlugin",
+    "restart": "pkill -f com.robert.handy-model-picker.sdPlugin/bin/plugin.js; echo 'Stream Deck relaunches the plugin automatically'",
+    "validate": "streamdeck validate com.robert.handy-model-picker.sdPlugin",
+    "pack": "npm run build && mkdir -p dist && streamdeck pack com.robert.handy-model-picker.sdPlugin --output dist --force"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.0"
+  },
+  "devDependencies": {
+    "@elgato/cli": "^1.10.0",
+    "@types/node": "^24.13.6",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2"
+  }
+}

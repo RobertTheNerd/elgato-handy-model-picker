@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.robert.handy-model-picker",
+  "Name": "Handy Model Picker",
+  "Version": "0.1.0.0",
+  "Author": "RobertTheNerd",
+  "Description": "One key per Handy speech-to-text model: press to make it Handy's active model.",
+  "Icon": "imgs/plugin",
+  "CategoryIcon": "imgs/category",
+  "Category": "Handy Model Picker",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Nodejs": {
+    "Version": "24"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "Actions": [
+    {
+      "UUID": "com.robert.handy-model-picker.select",
+      "Name": "Select Model",
+      "Tooltip": "Make the configured model Handy's active speech-to-text model.",
+      "Icon": "imgs/action",
+      "PropertyInspectorPath": "ui/select-model.html",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "TitleAlignment": "bottom",
+          "FontSize": 11
+        }
+      ]
+    }
+  ]
+}
